@@ -1,0 +1,4 @@
+data/pincodes.json
+package-lock.json
+coverage
+*.md
