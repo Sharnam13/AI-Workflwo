@@ -1,25 +1,50 @@
 {
-  "name": "ai-workflow",
+  "name": "order-decision-engine",
   "version": "1.0.0",
-  "description": "Ai-Workflow project",
+  "description": "AI-assisted COD/RTO risk engine that decides whether a D2C order should ship, be verified, or be cancelled.",
   "license": "ISC",
   "author": "Sharnam",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon -r dotenv/config index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "seed": "node scripts/seed.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "d2c",
+    "ecommerce",
+    "rto",
+    "cod",
+    "fraud",
+    "risk-engine",
+    "gemini",
+    "express",
+    "mongodb"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sharnam13/AI-Workflwo.git"
   },
   "dependencies": {
-    "@google/generative-ai": "^0.24.1",
-    "cookie-parser": "^1.4.7",
-    "cors": "^2.8.6",
-    "dotenv": "^17.4.1",
+    "@google/genai": "^2.24.0",
+    "dotenv": "^18.0.4",
     "express": "^5.2.1",
-    "gitignore": "^0.7.0",
-    "mongoose": "^9.4.1"
+    "mongoose": "^9.10.2",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
+    "mongodb-memory-server": "^11.3.0",
     "nodemon": "^3.1.14",
-    "prettier": "^3.8.1"
+    "prettier": "^3.9.9",
+    "supertest": "^7.3.0",
+    "vitest": "^5.0.2"
   }
 }
